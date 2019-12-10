@@ -1,0 +1,7 @@
+objects     messages
+Person
+Bike        working?
+Docking station  release_bike
+
+Bike  == > working? ==> true/false 
+dockingstation == release_bike ==> Bike
