@@ -4,6 +4,7 @@ require 'docking_station'
 describe DockingStation do
   it { is_expected.to respond_to :release_bike  }
 
+<<<<<<< HEAD
   describe '.capacity' do
     it "default capacity check" do
       expect(subject.capacity).to eq DockingStation::DEFAULT_CAPACITY
@@ -18,6 +19,20 @@ describe DockingStation do
     end
   end
 
+=======
+  describe '#report_broken' do
+    # it 'subject responds to broken method' do
+    #   expect(subject).to respond_to :broken
+    # end
+
+    it 'returns false for broken' do
+      subject.report_broken
+      expect(subject).to be_broken
+    end
+  end
+
+
+>>>>>>> 95a6dcfdff3e38bfbeb8e9fa04c15924b37a0e51
   describe '#release_bike' do
     it 'releases a bike' do
       bike = Bike.new
@@ -39,8 +54,13 @@ describe DockingStation do
   end
 
   describe '#dock' do
+<<<<<<< HEAD
     it 'raises error when there is a bike' do
       subject.capacity.times {subject.dock Bike.new}
+=======
+    it 'raises error when station full' do
+      DockingStation::DEFAULT_CAPACITY.times {subject.dock Bike.new}
+>>>>>>> 95a6dcfdff3e38bfbeb8e9fa04c15924b37a0e51
       expect {subject.dock Bike.new}.to raise_error "DockingStation full"
     end
   end
