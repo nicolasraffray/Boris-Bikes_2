@@ -7,7 +7,7 @@ class DockingStation
   end
 
   def dock(bike)
-    fail "DockingStation full" if @bikes.size >= 20
+    fail "DockingStation full" if full?
     @bikes << bike
   end
 
@@ -16,7 +16,15 @@ class DockingStation
     @bikes.pop
   end
 
+  private
+  def full?
+    @bikes.count >= 20 ? true : false
+  end
 
+  def empty?
+    @bikes.empty?
+  end
+end
 
 
   # def bike
@@ -24,5 +32,3 @@ class DockingStation
   #   @bike
   #
   # end
-
-end
